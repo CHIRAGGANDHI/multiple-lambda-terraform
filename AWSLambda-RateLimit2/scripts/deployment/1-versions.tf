@@ -10,9 +10,14 @@ terraform {
       version = "3.2.1"
     }      
   }  
+
+  backend "s3" {
+  }
 }
 
 #provider block
 provider "aws" {
   region = var.aws_region
+  access_key = var.aws_accesskey
+  secret_key = var.aws_secret_key
 }

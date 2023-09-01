@@ -6,8 +6,8 @@ resource "aws_lambda_function" "lambda_function" {
     function_name   = local.functionname
     description     = "A Sample Cron Job Function RateLimit2"
 
-    s3_bucket       = "lamba-code"
-    s3_key          = "lambda-Terraform.zip"
+    s3_bucket       = var.lambda-s3bucketname
+    s3_key          = var.lambda-s3codefolder
 
     role            = aws_iam_role.lambda_role.arn
 
@@ -28,7 +28,7 @@ resource "aws_lambda_function" "lambda_function" {
 
     environment {
       variables = {
-        AWS_PARAMETER_SPACE = var.space
+        AWS_PARAMETER_SPACE = "${local.parameterstoreprefix}/aws-db-pgsql/dbConnectionString/dbname"
         AWS_LAMBDA_REGION = var.aws_region
       }    
     }

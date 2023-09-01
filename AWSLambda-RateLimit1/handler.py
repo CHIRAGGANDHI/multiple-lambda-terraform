@@ -14,7 +14,7 @@ logger.setLevel(logging.INFO)
 def run(event, context):
 
     space = os.environ['AWS_PARAMETER_SPACE']
-    spaceDetails = "/{}/connectionstring".format(space)
+    spaceDetails = space #"/{}/connectionstring".format(space)
     response = ssm_client.get_parameter(Name=spaceDetails)
     
     logger.info("lambda-cron-sample-test-1, Space Name:" + spaceDetails + ", Space Value:" + response['Parameter']['Value'])   

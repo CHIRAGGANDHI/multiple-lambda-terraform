@@ -5,8 +5,6 @@ locals {
 
   name = "${local.owners}-${local.space}-${local.environment}"
 
-  parameterstoreprefix = "/${local.owners}/${local.space}/${local.environment}"
-  
   common_tags = {
     owners = local.owners
     space = local.space

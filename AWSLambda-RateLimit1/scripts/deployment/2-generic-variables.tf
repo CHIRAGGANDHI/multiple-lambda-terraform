@@ -24,3 +24,11 @@ variable "environment" {
   type = string
   default = "dev"
 }
+
+variable "aws_accesskey" {
+  type = string
+}
+
+variable "aws_secret_key" {
+  type = string
+}
