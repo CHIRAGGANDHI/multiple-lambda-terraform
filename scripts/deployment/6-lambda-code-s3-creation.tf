@@ -11,7 +11,7 @@ resource "aws_s3_bucket" "lambda_bucket" {
 resource "aws_s3_bucket_acl" "lambda_bucket_acl" {
   bucket = aws_s3_bucket.lambda_bucket.id
   acl    = "private"
-}*/
+}
 
 data "archive_file" "lambda_code" {
   type = "zip"
@@ -27,4 +27,4 @@ resource "aws_s3_object" "lambda_code" {
   source = data.archive_file.lambda_code.output_path
 
   etag = filemd5(data.archive_file.lambda_code.output_path)
-}
+}*/

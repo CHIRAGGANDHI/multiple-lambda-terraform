@@ -3,8 +3,8 @@ resource "aws_lambda_function" "lambda_function" {
     description       = var.lambda_function_description    
 
     s3_bucket         = data.aws_s3_bucket.lambda_bucket.id
-    s3_key            = aws_s3_object.lambda_code.key
-    source_code_hash  = data.archive_file.lambda_code.output_base64sha256
+    s3_key            = var.lambda_s3key
+    //source_code_hash  = data.archive_file.lambda_code.output_base64sha256
 
     role              = aws_iam_role.lambda_role.arn
 
