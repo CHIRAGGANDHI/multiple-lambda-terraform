@@ -21,14 +21,14 @@ resource "aws_lambda_function" "lambda_function" {
     memory_size       = 128  //MB
     publish           = true //version
 
-    vpc_config {
+    /*vpc_config {
       subnet_ids         = [
         data.terraform_remote_state.vpc-infrastructure.outputs.private_subnets[3], 
         data.terraform_remote_state.vpc-infrastructure.outputs.private_subnets[4] ]
 
       security_group_ids = [
         data.terraform_remote_state.vpc-infrastructure.outputs.lambda_sg_group_id ]
-    }
+    }*/
 
     layers = [
       "arn:aws:lambda:ap-south-1:176022468876:layer:AWS-Parameters-and-Secrets-Lambda-Extension:10",
