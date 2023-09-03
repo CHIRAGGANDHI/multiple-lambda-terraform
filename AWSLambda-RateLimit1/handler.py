@@ -13,8 +13,11 @@ logger.setLevel(logging.INFO)
 
 def run(event, context):
 
-    space = os.environ['AWS_PARAMETER_SPACE']
-    spaceDetails = space #"/{}/connectionstring".format(space)
+    business_division = os.environ['AWS_PARAMETER_BUSINESS_DIVISION']
+    space = os.environ['AWS_PARAMETER_SPACE']    
+    environment = os.environ['AWS_PARAMETER_ENVIRONMENT']
+
+    spaceDetails ="/{}/{}/{}/aws-db-pgsql/dbConnectionString/dbname".format(business_division,space,environment)
     response = ssm_client.get_parameter(Name=spaceDetails)
     
     logger.info("lambda-cron-sample-test-1, Space Name:" + spaceDetails + ", Space Value:" + response['Parameter']['Value'])   

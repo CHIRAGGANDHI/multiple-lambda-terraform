@@ -8,7 +8,15 @@ terraform {
     null = {
       source = "hashicorp/null"
       version = "3.2.1"
-    }      
+    }     
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.5"
+    }
+    archive = {
+      source  = "hashicorp/archive"
+      version = "~> 2.4"
+    } 
   }  
 
   backend "s3" {

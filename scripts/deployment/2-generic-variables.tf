@@ -32,3 +32,7 @@ variable "aws_accesskey" {
 variable "aws_secret_key" {
   type = string
 }
+
+variable "state_bucket" {
+  type = string
+}

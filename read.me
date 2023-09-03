@@ -1,0 +1,5 @@
+terraform init -backend-config="dev.conf" -var-file="secrets.tfvars"
+terraform validate
+terraform plan -var-file="secrets.tfvars"
+terraform apply -var-file="secrets.tfvars"
+terraform destroy -var-file="secrets.tfvars"

@@ -5,8 +5,8 @@ locals {
 
   name = "${local.owners}-${local.space}-${local.environment}"
 
-  parameterstoreprefix = "/${local.owners}/${local.space}/${local.environment}"
-  
+  functionname = "${local.name}-${var.lambda_functionname}"
+
   common_tags = {
     owners = local.owners
     space = local.space
